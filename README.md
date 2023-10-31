@@ -68,6 +68,11 @@ Create a virutal python environment and install requirements.txt
 conda env create -f environment.yml
 ```
 
+**To save a conda environment**:
+```terminal
+conda env export | grep -v "^prefix: " > environment.yml
+```
+
 ### Python Environment
 
 If you are installing through pip
@@ -76,17 +81,75 @@ If you are installing through pip
 pip install -r requirements.txt
 ```
 
-### Initialization
-
+**To save a python environment**:
 ```terminal
-tflocal init
+pip freeze > requirements.txt
 ```
 
+### Initialization & Verification
 
+**To verify tflocal is installed**:
+```terminal
+tflocal init
+tflocal -version
+```
+Output the folowing:
+```terminal
+Terraform v1.6.2
+on linux_amd64
++ provider registry.terraform.io/hashicorp/aws v5.23.1
+```
 
+**To verify localstack is installed**:
 
+```terminal
+localstack start -d
+localstack status services
+```
+Output the folowing:
+```terminal
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
+┃ Service                  ┃ Status      ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━┩
+│ acm                      │ ✔ available │
+│ apigateway               │ ✔ available │
+│ cloudformation           │ ✔ available │
+│ cloudwatch               │ ✔ available │
+│ config                   │ ✔ available │
+│ dynamodb                 │ ✔ available │
+│ dynamodbstreams          │ ✔ available │
+│ ec2                      │ ✔ available │
+│ es                       │ ✔ available │
+│ events                   │ ✔ available │
+│ firehose                 │ ✔ available │
+│ iam                      │ ✔ available │
+│ kinesis                  │ ✔ available │
+│ kms                      │ ✔ available │
+│ lambda                   │ ✔ available │
+│ logs                     │ ✔ available │
+│ opensearch               │ ✔ available │
+│ ram                      │ ✔ available │
+│ redshift                 │ ✔ available │
+│ resource-groups          │ ✔ available │
+│ resourcegroupstaggingapi │ ✔ available │
+│ route53                  │ ✔ available │
+│ route53resolver          │ ✔ available │
+│ s3                       │ ✔ available │
+│ s3control                │ ✔ available │
+│ scheduler                │ ✔ available │
+│ secretsmanager           │ ✔ available │
+│ ses                      │ ✔ available │
+│ sns                      │ ✔ available │
+│ sqs                      │ ✔ available │
+│ ssm                      │ ✔ available │
+│ stepfunctions            │ ✔ available │
+│ sts                      │ ✔ available │
+│ support                  │ ✔ available │
+│ swf                      │ ✔ available │
+│ transcribe               │ ✔ available │
+└──────────────────────────┴─────────────┘
+```
 
+### How to Use This Repository:
 
-
-
-Placeholder
+Place Holder
