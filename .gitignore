@@ -1,0 +1,6 @@
+# Terraform Files
+.terraform/
+.terraform.lock.hcl
+
+# ANY env Files 
+*.env
